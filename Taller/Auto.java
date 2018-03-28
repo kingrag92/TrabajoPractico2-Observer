@@ -20,7 +20,6 @@ public class Auto implements Observer{
     private Boolean aceite;
     private Boolean presionCubiertas;
     private Boolean nivelAgua;
-    private Boolean aviso=false;
     
     public Auto(){
         this.patente="";
@@ -48,45 +47,43 @@ public class Auto implements Observer{
      @Override
     public void update(Observable o, Object o1) {
         Auto aux=(Auto) o1;
-        if(!aviso){
             if(aux.getAceite()&&aux.getNivelAgua()&&aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"que puede venir a buscar el vehiculo, se cambia agua, aceite y se verifica presión de las cubiertas.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, se cambia agua, aceite y se verifica presión de las cubiertas.");
+                
             }
             if(aux.getAceite()&&aux.getNivelAgua()&&!aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"  que puede venir a buscar el vehiculo, se cambia agua y aceite.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, se cambia agua y aceite.");
+                
             }
             if(aux.getAceite()&&!aux.getNivelAgua()&&aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"que puede venir a buscar el vehiculo, se cambia aceite y la presión de las cubiertas.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, se cambia aceite y la presión de las cubiertas.");
+                
             }
             if(!aux.getAceite()&&aux.getNivelAgua()&&aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"que puede venir a buscar el vehiculo, se agrega agua y se sube la presión de las cubiertas.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, se agrega agua y se sube la presión de las cubiertas.");
+               
             }
             if(!aux.getAceite()&&!aux.getNivelAgua()&&aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"que puede venir a buscar el vehiculo, se le agrego presión a las cubiertas.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, se le agrego presión a las cubiertas.");
+                
             }
             if(aux.getAceite()&&!aux.getNivelAgua()&&!aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"que puede venir a buscar el vehiculo, se le cambio el aceite.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, se le cambio el aceite.");
+                
             }
             if(!aux.getAceite()&&aux.getNivelAgua()&&!aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"que puede venir a buscar el vehiculo, se le agrego agua destilada.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, se le agrego agua destilada.");
+                
             }
             if(!aux.getAceite()&&!aux.getNivelAgua()&&aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"que puede venir a buscar el vehiculo, tiene baja la presion de las cubiertas.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, tiene baja la presion de las cubiertas.");
+                
             }
             if(!aux.getAceite()&&!aux.getNivelAgua()&&!aux.getPresionCubiertas()){
-                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+"que puede venir a buscar el vehiculo, no se le encontro ningun problema Cualquier cosnulta se volvera a traer.");
-                aviso=true;
+                System.out.println("Se le avisa al cliente "+aux.getDueño().getApellido()+" que puede venir a buscar el vehiculo, no se le encontro ningun problema Cualquier cosnulta se volvera a traer.");
+                
             }
-        }
-        aviso=false;
+        
     }
     
     

@@ -39,8 +39,6 @@ public class Main {
        
        //Agrego el addObserver al mecanico
        m1.addObserver(a1);
-       m1.addObserver(a2);
-       m1.addObserver(a3);
        
        //Creo la lista de Autos para darselas al mecanico
        List<Auto> listaAutos=new ArrayList<Auto>();
